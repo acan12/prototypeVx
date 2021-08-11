@@ -48,15 +48,7 @@ open class SdkActivity : AppActivity(), IOttoCashView {
         accessToken = o.access_token
         if (accessToken.equals("")) {
         } else {
-            RxCompositeDisposableManager.doAction(object : RxCompositeDisposableManager.OnProcess() {
-                override fun onCall() {
-                    // called when on process
-                    OttoCashPresenter(activity).onAccountBalance(phoneNumberSend!!, activity)
-
-                }
-            }, object : RxCompositeDisposableManager.RxCallback() {
-                override fun onComplete() {}
-            })
+            OttoCashPresenter(activity).onAccountBalance(phoneNumberSend!!, activity)
 
         }
     }

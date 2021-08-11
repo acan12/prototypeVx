@@ -37,7 +37,7 @@ class OttoCashPresenter(var iview: IView) : BasePresenter(), OttocashDao.IAuthDa
     override fun onAccountBalance(phone_number: String, context: Context) {
         OttocashDao().onAccountBalance(phone_number, context)
             .subscribe(object : RxObserver<BaseResponse>(
-                iview, "Loading"
+                iview
             ) {
                 override fun onNext(o: Any) {
                     super.onNext(o)
