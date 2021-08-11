@@ -34,7 +34,9 @@ class Api : BaseApi() {
                     ApiService::class.java,
                     false,
                     60,
-                    true
+                    true,
+                    null,
+                    null
                 ) as ApiService
         }
 

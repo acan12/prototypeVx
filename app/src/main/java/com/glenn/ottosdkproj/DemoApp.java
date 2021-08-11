@@ -24,11 +24,6 @@ public class DemoApp extends BaseApp {
 
         context = getApplicationContext();
         setupBuilder(DaggerAppComponent.builder(), this);
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Roboto-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
-                .disableCustomViewInflation()
-                .build());
 
         App.Companion.setupComponent(getAppComponent());
     }
