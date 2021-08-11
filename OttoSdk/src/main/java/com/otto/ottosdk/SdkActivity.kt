@@ -2,6 +2,7 @@ package com.otto.ottosdk
 
 import android.content.Context
 import android.os.Bundle
+import app.beelabs.com.codebase.support.rx.RxCompositeDisposableManager
 import app.beelabs.com.codebase.support.util.CacheUtil
 import com.otto.ottosdk.callback.response.AccountBalanceResponse
 import com.otto.ottosdk.callback.response.TokenResponse
@@ -47,7 +48,16 @@ open class SdkActivity : AppActivity(), IOttoCashView {
         accessToken = o.access_token
         if (accessToken.equals("")) {
         } else {
-            OttoCashPresenter(activity).onAccountBalance(phoneNumberSend!!, activity)
+            RxCompositeDisposableManager.doAction(object : RxCompositeDisposableManager.OnProcess() {
+                override fun onCall() {
+                    // called when on process
+                    OttoCashPresenter(activity).onAccountBalance(phoneNumberSend!!, activity)
+
+                }
+            }, object : RxCompositeDisposableManager.RxCallback() {
+                override fun onComplete() {}
+            })
+
         }
     }
 
