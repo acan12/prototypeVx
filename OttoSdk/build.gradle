@@ -59,7 +59,7 @@ dependencies {
     implementation "id.pede.gitlab.vexlib.WebviewLib:WebviewModuleAuth:$wvLibVer"
 
     // App
-    implementation "com.github.acan12:coconut:2.3.0-rc.5"
+    implementation "com.github.acan12:coconut:2.3.0-rc.14"
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
     implementation 'io.github.inflationx:viewpump:2.0.3'
     implementation 'com.github.ybq:Android-SpinKit:1.2.0'
